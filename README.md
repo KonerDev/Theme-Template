@@ -9,23 +9,28 @@ You can use this template as a starting point to build your own themes.
 ## Getting started
 
 1. Clone this repository
-2. Edit `theme.json` to customize your theme
-3. Update `manifest.json` (at least `id`, `name`, `version`, `author`, `repository`)
+2. Edit `theme.json` to customize your theme's colors
+3. Update `manifest.json` with your package metadata (at least `id`, `name`, `version`, `author`, `repository`)
 4. Run `npm run build` (or `node build.js`) to produce the `.xed` package in `output/`
 
 ## Configure your theme
 
-Edit the following in `theme.json`:
+Edit the color palettes in `theme.json`:
+
+* `light` / `dark` – color palettes for the app, editor and terminal
+
+> `theme.json` holds colors only. All package metadata lives in `manifest.json` and the two files are kept separate.
+
+The `manifest.json` holds the package metadata shown in the store:
 
 * `id` – unique identifier of your theme (lowercase letters, numbers, `.`, `_`, `-`)
 * `name` – display name of your theme
+* `version`, `author`, `description`, `tags`, `repository`, `license` – store listing metadata
 * `minAppVersion` – minimum Xed-Editor app version your theme supports (`null` for no restriction)
-* `light` / `dark` – color palettes for the app, editor and terminal
-
-The `manifest.json` holds the package metadata shown in the store (`id`, `name`, `version`, `author`, `description`, `tags`, `repository`, `license`).
+* `inheritBase` – whether to inherit token colors from the base theme
 
 > [!WARNING]
-> `manifest.json` `id` must match the `id` in `theme.json`, and it must match the package name you use when publishing.
+> `manifest.json` `id` must match the package name you use when publishing.
 
 ## Build
 

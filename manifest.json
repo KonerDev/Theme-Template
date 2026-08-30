@@ -9,5 +9,7 @@
   },
   "repository": "https://github.com/Xed-Editor/Theme-Template",
   "license": "MIT",
-  "tags": []
+  "tags": [],
+  "minAppVersion": 87,
+  "inheritBase": true
 }

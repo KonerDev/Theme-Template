@@ -1,31 +1,12 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "title": "Xed-Editor theme",
-    "description": "A theme for Xed-Editor",
+    "description": "Color palettes for a Xed-Editor theme. Package metadata (id, name, version, author, minAppVersion, inheritBase, etc.) belongs in manifest.json, not here",
     "type": "object",
-    "required": ["id", "name"],
     "properties": {
         "$schema": {
             "type": "string",
             "description": "Xed-Editor theme schema URL. This property enables theme validation and auto-completion"
-        },
-        "id": {
-            "type": "string",
-            "description": "Unique identifier for the theme"
-        },
-        "name": {
-            "type": "string",
-            "description": "Display name of the theme"
-        },
-        "minAppVersion": {
-            "type": ["integer", "null"],
-            "default": null,
-            "description": "Minimum Xed-Editor version supported. null means no minimum restriction"
-        },
-        "inheritBase": {
-            "type": "boolean",
-            "description": "Whether to inherit `tokenColors` from base theme",
-            "default": true
         },
         "light": {
             "type": "object",
@@ -36,11 +17,6 @@
             "type": "object",
             "description": "Color palette for dark mode",
             "$ref": "#/$defs/colorPalette"
-        },
-        "type": {
-            "type": "string",
-            "enum": ["extension", "theme", "icon_pack"],
-            "description": "Package type (used in unified .xed format)"
         }
     },
     "$defs": {

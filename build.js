@@ -113,20 +113,17 @@ function main() {
   const themeJson = readJson('theme.json');
   const manifest = readJson('manifest.json');
 
-  if (!themeJson.id || !themeJson.name) {
-    throw new Error('theme.json must define both "id" and "name".');
-  }
   if (!manifest.id) {
     throw new Error('manifest.json must define an "id".');
   }
-  if (manifest.id !== themeJson.id) {
-    console.warn(
-      `⚠️  manifest.json id "${manifest.id}" does not match theme.json id "${themeJson.id}". ` +
-        'They should be the same, and must match the package name you use when publishing.',
-    );
-  }
   if (!manifest.name) {
-    console.warn('⚠️  manifest.json has no "name" field. The store will show an untitled theme.');
+    throw new Error('manifest.json must define a "name".');
+  }
+  if (manifest.minAppVersion != null && !Number.isInteger(manifest.minAppVersion)) {
+    throw new Error('manifest.json "minAppVersion" must be an integer or null.');
+  }
+  if (manifest.inheritBase != null && typeof manifest.inheritBase !== 'boolean') {
+    throw new Error('manifest.json "inheritBase" must be a boolean.');
   }
   if (!manifest.version) {
     console.warn('⚠️  manifest.json has no "version" field. The store will default it.');
