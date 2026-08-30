@@ -6,10 +6,39 @@ You can use this template as a starting point to build your own themes.
 > [!TIP]
 > See the [documentation](https://xed-editor.github.io/Xed-Docs/docs/themes/#creating-custom-themes) page for details on customizing the theme.
 
-## How to get started
+## Getting started
 
-1. Download the `theme.json` file from this repository
-2. Open the `theme.json` file in a text editor (e.g., Xed-Editor)
-3. Modify the theme to your liking
-4. Go to **Xed-Editor → Settings → Themes → Add theme**
-5. Select your `theme.json` file to apply the theme
+1. Clone this repository
+2. Edit `theme.json` to customize your theme
+3. Update `manifest.json` (at least `id`, `name`, `version`, `author`, `repository`)
+4. Run `npm run build` (or `node build.js`) to produce the `.xed` package in `output/`
+
+## Configure your theme
+
+Edit the following in `theme.json`:
+
+* `id` – unique identifier of your theme (lowercase letters, numbers, `.`, `_`, `-`)
+* `name` – display name of your theme
+* `minAppVersion` – minimum Xed-Editor app version your theme supports (`null` for no restriction)
+* `light` / `dark` – color palettes for the app, editor and terminal
+
+The `manifest.json` holds the package metadata shown in the store (`id`, `name`, `version`, `author`, `description`, `tags`, `repository`, `license`).
+
+> [!WARNING]
+> `manifest.json` `id` must match the `id` in `theme.json`, and it must match the package name you use when publishing.
+
+## Build
+
+```bash
+npm run build
+```
+
+This creates `output/<id>.xed`, a ZIP package containing `theme.json`, `manifest.json` and — when present — `README.md`, `icon.png` and `CHANGELOG.md`.
+
+## Install locally
+
+Go to **Xed-Editor → Settings → Themes → Add theme** and select the built `.xed` file.
+
+## Publish to the store
+
+Upload the built `.xed` on [xed-editor.app](https://xed-editor.app). Make sure the package name you pick matches the `id` in `manifest.json`.

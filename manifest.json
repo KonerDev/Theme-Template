@@ -1,0 +1,13 @@
+{
+  "id": "theme-template",
+  "name": "Theme template",
+  "version": "0.1.0",
+  "description": "A theme template for Xed-Editor",
+  "type": "theme",
+  "author": {
+    "displayName": "Unknown"
+  },
+  "repository": "https://github.com/Xed-Editor/Theme-Template",
+  "license": "MIT",
+  "tags": []
+}

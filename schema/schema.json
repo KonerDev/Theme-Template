@@ -36,6 +36,11 @@
             "type": "object",
             "description": "Color palette for dark mode",
             "$ref": "#/$defs/colorPalette"
+        },
+        "type": {
+            "type": "string",
+            "enum": ["extension", "theme", "icon_pack"],
+            "description": "Package type (used in unified .xed format)"
         }
     },
     "$defs": {
