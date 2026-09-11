@@ -1,7 +1,8 @@
 {
-  "id": "theme-template",
+  "$schema": "https://raw.githubusercontent.com/Xed-Editor/Xed-Schemas/main/theme-manifest.json",
+  "id": "com.demo.theme_template",
   "name": "Theme template",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A theme template for Xed-Editor",
   "type": "theme",
   "author": {

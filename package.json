@@ -1,9 +1,0 @@
-{
-  "name": "xed-theme-template",
-  "version": "0.1.0",
-  "private": true,
-  "description": "A theme template for Xed-Editor",
-  "scripts": {
-    "build": "node build.js"
-  }
-}
